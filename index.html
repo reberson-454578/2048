@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1>2048</h1>
+        <div class="score-container">
+          <div class="score">Pontuação: <span id="score">0</span></div>
+          <div class="high-score">Recorde: <span id="high-score">0</span></div>
+        </div>
+      </header>
+      <div class="grid-container" id="grid-container">
+        <!-- Células do jogo serão geradas dinamicamente -->
+      </div>
+    </div>
+
+    <!-- Modal de fim de jogo -->
+    <div id="game-over-modal" class="modal">
+      <div class="modal-content">
+        <h2>Você Perdeu!</h2>
+        <p>Tente novamente e alcance a pontuação máxima!</p>
+        <button id="restart-button">Jogar Novamente</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

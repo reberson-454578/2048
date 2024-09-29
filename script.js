@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+  function createFallingNumber() {
+    const numberElement = document.createElement("div");
+    numberElement.classList.add("background-number");
+
+    // Gera um número aleatório da lista [2, 4, 8, 16, 32, 64]
+    const numbers = [2, 4, 8, 16, 32, 64];
+    const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+    numberElement.textContent = randomNumber;
+
+    // Define a posição e a duração da animação
+    numberElement.style.left = `${Math.random() * 100}vw`; // Posição horizontal aleatória
+    numberElement.style.animationDuration = `${Math.random() * 10 + 10}s`; // Aumenta o tempo da queda para 10 a 20 segundos
+
+    document.querySelector(".background-numbers").appendChild(numberElement);
+  }
+
+  // Gerar números de forma contínua
+  setInterval(createFallingNumber, 500); // Cria um número a cada 500ms
+
+  // Restante do código do jogo 2048...
   const gridContainer = document.getElementById("grid-container");
   const scoreDisplay = document.getElementById("score");
   const highScoreDisplay = document.getElementById("high-score");
@@ -368,4 +388,43 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  let startX, startY, endX, endY;
+
+  // Captura o início do toque
+  gridContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  });
+
+  // Captura o final do toque e define a direção
+  gridContainer.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+    handleGesture();
+  });
+
+  // Lida com o movimento de toque
+  function handleGesture() {
+    const diffX = endX - startX;
+    const diffY = endY - startY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        move("right");
+      } else {
+        move("left");
+      }
+    } else {
+      if (diffY > 0) {
+        move("down");
+      } else {
+        move("up");
+      }
+    }
+  }
+
+  // Função de movimentação das células permanece a mesma...
 });

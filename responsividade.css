@@ -1,0 +1,74 @@
+/* Estilos para dispositivos com telas menores */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+    height: auto;
+    padding: 20px;
+    background-color: #faf8ef; /* Garanta que o fundo funcione em qualquer tamanho */
+  }
+
+  .game-container {
+    transform: scale(1); /* Remove qualquer escala menor */
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima em dispositivos móveis */
+  }
+
+  h1 {
+    font-size: 2.2em; /* Reduz o tamanho do título em telas menores */
+  }
+
+  .score-container {
+    flex-direction: column; /* Ajusta as pontuações para ficarem empilhadas */
+    align-items: center;
+  }
+
+  .score,
+  .high-score {
+    width: auto; /* Ajusta o tamanho das pontuações para preencher automaticamente */
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 5px 10px; /* Ajuste para melhor aparência em telas pequenas */
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 70px); /* Células menores */
+    grid-template-rows: repeat(4, 70px);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .grid-cell {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6em; /* Reduz a fonte das células */
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+}
+
+/* Para dispositivos ainda menores, como smartphones */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 60px); /* Células ainda menores */
+    grid-template-rows: repeat(4, 60px);
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .grid-cell {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4em; /* Reduz ainda mais o tamanho da fonte */
+  }
+
+  h1 {
+    font-size: 1.8em; /* Reduz o tamanho do título para dispositivos pequenos */
+  }
+
+  .score-container {
+    margin-top: 5px;
+  }
+}

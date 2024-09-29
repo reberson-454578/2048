@@ -293,3 +293,27 @@ button:hover {
     opacity: 1; /* Mantém a opacidade constante */
   }
 }
+
+/* Animação de pulso para quando os pares são combinados */
+@keyframes pair-combination {
+  0% {
+    transform: scale(1);
+    background-color: #f2b179; /* Cor inicial */
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.1); /* Aumenta levemente o tamanho */
+    background-color: #ffdd57; /* Cor mais clara */
+    box-shadow: 0 0 15px rgba(255, 221, 87, 0.7); /* Adiciona um brilho suave */
+  }
+  100% {
+    transform: scale(1);
+    background-color: #f2b179; /* Volta à cor inicial */
+    box-shadow: none;
+  }
+}
+
+/* Classe para adicionar a animação de combinação */
+.pair-animation {
+  animation: pair-combination 0.6s ease-out;
+}

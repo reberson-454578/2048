@@ -108,6 +108,15 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             score += parseInt(cells[targetIdx - 4].textContent);
             scoreDisplay.textContent = score;
+
+            // Adiciona a animação de combinação ao par combinado
+            cells[targetIdx - 4].classList.add("pair-animation");
+
+            // Remove a classe de animação após a conclusão
+            setTimeout(() => {
+              cells[targetIdx - 4].classList.remove("pair-animation");
+            }, 600); // Duração da animação
+
             updateHighScore(); // Atualiza o recorde se necessário
             cells[currentIdx].textContent = "";
             cells[currentIdx].removeAttribute("data-value");
@@ -160,6 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             score += parseInt(cells[targetIdx + 4].textContent);
             scoreDisplay.textContent = score;
+
+            // Adiciona a animação de combinação ao par combinado
+            cells[targetIdx + 4].classList.add("pair-animation");
+
+            // Remove a classe de animação após a conclusão
+            setTimeout(() => {
+              cells[targetIdx + 4].classList.remove("pair-animation");
+            }, 600); // Duração da animação
+
             updateHighScore(); // Atualiza o recorde se necessário
             cells[currentIdx].textContent = "";
             cells[currentIdx].removeAttribute("data-value");
@@ -212,6 +230,15 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             score += parseInt(cells[targetIdx - 1].textContent);
             scoreDisplay.textContent = score;
+
+            // Adiciona a animação de combinação ao par combinado
+            cells[targetIdx - 1].classList.add("pair-animation");
+
+            // Remove a classe de animação após a conclusão
+            setTimeout(() => {
+              cells[targetIdx - 1].classList.remove("pair-animation");
+            }, 600); // Duração da animação
+
             updateHighScore(); // Atualiza o recorde se necessário
             cells[currentIdx].textContent = "";
             cells[currentIdx].removeAttribute("data-value");
@@ -264,6 +291,15 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             score += parseInt(cells[targetIdx + 1].textContent);
             scoreDisplay.textContent = score;
+
+            // Adiciona a animação de combinação ao par combinado
+            cells[targetIdx + 1].classList.add("pair-animation");
+
+            // Remove a classe de animação após a conclusão
+            setTimeout(() => {
+              cells[targetIdx + 1].classList.remove("pair-animation");
+            }, 600); // Duração da animação
+
             updateHighScore(); // Atualiza o recorde se necessário
             cells[currentIdx].textContent = "";
             cells[currentIdx].removeAttribute("data-value");
@@ -388,10 +424,6 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  let startX, startY, endX, endY;
 
   // Captura o início do toque
   gridContainer.addEventListener("touchstart", (e) => {
@@ -405,26 +437,4 @@ document.addEventListener("DOMContentLoaded", () => {
     endY = e.changedTouches[0].clientY;
     handleGesture();
   });
-
-  // Lida com o movimento de toque
-  function handleGesture() {
-    const diffX = endX - startX;
-    const diffY = endY - startY;
-
-    if (Math.abs(diffX) > Math.abs(diffY)) {
-      if (diffX > 0) {
-        move("right");
-      } else {
-        move("left");
-      }
-    } else {
-      if (diffY > 0) {
-        move("down");
-      } else {
-        move("up");
-      }
-    }
-  }
-
-  // Função de movimentação das células permanece a mesma...
 });

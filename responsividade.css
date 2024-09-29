@@ -1,74 +1,95 @@
 /* Estilos para dispositivos com telas menores */
 @media (max-width: 768px) {
   body {
+    font-size: 2.5vw; /* Tamanho da fonte baseado na largura da tela */
     justify-content: flex-start;
     height: auto;
-    padding: 20px;
-    background-color: #faf8ef; /* Garanta que o fundo funcione em qualquer tamanho */
+    padding: 10px;
   }
 
   .game-container {
-    transform: scale(1); /* Remove qualquer escala menor */
-    width: 100%;
-    max-width: 400px; /* Limita a largura máxima em dispositivos móveis */
+    width: 90vw; /* O jogo ocupará 90% da largura da tela */
+    max-width: none;
   }
 
   h1 {
-    font-size: 2.2em; /* Reduz o tamanho do título em telas menores */
+    font-size: 8vw; /* Reduz o tamanho do título */
   }
 
   .score-container {
-    flex-direction: column; /* Ajusta as pontuações para ficarem empilhadas */
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vw;
   }
 
   .score,
   .high-score {
-    width: auto; /* Ajusta o tamanho das pontuações para preencher automaticamente */
-    margin-right: 0;
-    margin-bottom: 10px;
-    padding: 5px 10px; /* Ajuste para melhor aparência em telas pequenas */
+    width: auto;
+    padding: 1vw 2vw; /* Ajuste proporcional ao tamanho da tela */
+    font-size: 4vw;
   }
 
   .grid-container {
-    grid-template-columns: repeat(4, 70px); /* Células menores */
-    grid-template-rows: repeat(4, 70px);
-    gap: 8px;
-    padding: 8px;
+    grid-template-columns: repeat(
+      4,
+      18vw
+    ); /* Células menores, 18% da largura da tela */
+    grid-template-rows: repeat(4, 18vw);
+    gap: 2vw;
+    padding: 2vw;
   }
 
   .grid-cell {
-    width: 70px;
-    height: 70px;
-    font-size: 1.6em; /* Reduz a fonte das células */
+    width: 18vw;
+    height: 18vw;
+    font-size: 6vw; /* Ajusta a fonte proporcionalmente */
   }
 
   button {
-    padding: 10px 15px;
-    font-size: 0.9em;
+    padding: 2vw 4vw;
+    font-size: 4vw;
   }
 }
 
 /* Para dispositivos ainda menores, como smartphones */
 @media (max-width: 480px) {
-  .grid-container {
-    grid-template-columns: repeat(4, 60px); /* Células ainda menores */
-    grid-template-rows: repeat(4, 60px);
-    gap: 5px;
-    padding: 5px;
+  body {
+    font-size: 3.5vw;
   }
 
-  .grid-cell {
-    width: 60px;
-    height: 60px;
-    font-size: 1.4em; /* Reduz ainda mais o tamanho da fonte */
+  .game-container {
+    width: 95vw;
   }
 
   h1 {
-    font-size: 1.8em; /* Reduz o tamanho do título para dispositivos pequenos */
+    font-size: 10vw;
   }
 
   .score-container {
-    margin-top: 5px;
+    margin-top: 2vw;
+  }
+
+  .score,
+  .high-score {
+    font-size: 5vw;
+    padding: 1.5vw 3vw;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 20vw);
+    grid-template-rows: repeat(4, 20vw);
+    gap: 3vw;
+    padding: 3vw;
+  }
+
+  .grid-cell {
+    width: 20vw;
+    height: 20vw;
+    font-size: 7vw;
+  }
+
+  button {
+    padding: 3vw 5vw;
+    font-size: 5vw;
   }
 }

@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #686769;
+  background: linear-gradient(to bottom, #e0e0e0, #000000);
   margin: 0;
   overflow: hidden; /* Evita barra de rolagem durante a animação */
 }

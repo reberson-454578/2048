@@ -16,7 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Gerar números de forma contínua
-  setInterval(createFallingNumber, 500); // Cria um número a cada 500ms
+  setInterval(createFallingNumber, 1500); // Cria um número a cada 500ms
+
+  // Função para parar a criação de novos números após 45 segundos
+  setTimeout(() => {
+    clearInterval(intervalId); // Para a criação de novos números
+  }, 20000); // 20 segundos (20000 milissegundos)
 
   // Restante do código do jogo 2048...
   const gridContainer = document.getElementById("grid-container");

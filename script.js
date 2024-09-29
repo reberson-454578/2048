@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     numberElement.classList.add("background-number");
 
     // Gera um número aleatório da lista [2, 4, 8, 16, 32, 64]
-    const numbers = [2, 4, 8, 16, 32, 64];
+    const numbers = [2, 4, 8, 16, 32];
     const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
     numberElement.textContent = randomNumber;
 
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Gerar números de forma contínua
-  setInterval(createFallingNumber, 1500); // Cria um número a cada 500ms
+  setInterval(createFallingNumber, 2000); // Cria um número a cada 500ms
 
   // Função para parar a criação de novos números após 45 segundos
   setTimeout(() => {
     clearInterval(intervalId); // Para a criação de novos números
-  }, 20000); // 20 segundos (20000 milissegundos)
+  }, 10000); // 20 segundos (20000 milissegundos)
 
   // Restante do código do jogo 2048...
   const gridContainer = document.getElementById("grid-container");

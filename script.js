@@ -78,9 +78,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (moved) {
       generateNumber();
-      setTimeout(checkGameOver, 300); // Verifica o fim do jogo após gerar novo número
+      setTimeout(checkGameOver, 300); // Verifica o fim do jogo
+      checkForVictory(); // Verifica a vitória
     }
   }
+
+  // Função para verificar se o jogador atingiu 2048
+  function checkForVictory() {
+    if (cells.some((cell) => cell.textContent === "2048")) {
+      showVictoryModal();
+    }
+  }
+
+  // Função para exibir o modal de vitória
+  function showVictoryModal() {
+    const victoryModal = document.getElementById("victory-modal");
+    victoryModal.style.display = "flex"; // Exibe o modal de vitória
+  }
+
+  // Função para continuar jogando ou reiniciar
+  document
+    .getElementById("keep-playing-button")
+    .addEventListener("click", () => {
+      document.getElementById("victory-modal").style.display = "none"; // Esconde o modal, continua jogando
+    });
+
+  document
+    .getElementById("restart-game-button")
+    .addEventListener("click", resetGame);
 
   function moveUp() {
     let moved = false;

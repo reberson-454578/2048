@@ -5,6 +5,9 @@
     justify-content: flex-start;
     height: auto;
     padding: 10px;
+    background-size: cover; /* Faz o background cobrir todo o espaço disponível */
+    background-position: center; /* Centraliza o background */
+    background-attachment: fixed; /* Faz o fundo ficar fixo durante o scroll */
   }
 
   .game-container {
